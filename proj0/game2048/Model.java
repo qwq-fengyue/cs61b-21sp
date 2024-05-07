@@ -146,6 +146,9 @@ public class Model extends Observable {
                         getScore = true;
                         break;
                     }
+                    else {
+                        break;
+                    }
                 }
                 if (rowToMove != row) {
                     changed = true;
