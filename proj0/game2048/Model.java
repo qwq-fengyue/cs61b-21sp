@@ -129,20 +129,20 @@ public class Model extends Observable {
     public boolean updateRow(int col) {
         int size = board.size();
         boolean changed = false;
-        int marginRow = size - 1;
+        int boundaryRow = size - 1;
         for (int row = size - 2; row >= 0; row--) {
             Tile tile = board.tile(col, row);
             if (tile != null) {
                 int rowToMove = row;
                 boolean getScore = false;
-                for (int preRow = row + 1; preRow <= marginRow; preRow++) {
+                for (int preRow = row + 1; preRow <= boundaryRow; preRow++) {
                     Tile preTile = board.tile(col, preRow);
                     if (preTile == null) {
                         rowToMove = preRow;
                     }
                     else if (preTile.value() == tile.value()) {
                         rowToMove = preRow;
-                        marginRow = preRow - 1;
+                        boundaryRow = preRow - 1;
                         getScore = true;
                         break;
                     }
