@@ -1,7 +1,5 @@
 package deque;
 
-import javax.print.attribute.standard.JobKOctets;
-
 public class ArrayDeque<T> {
     private T[] items;
     private int size;
@@ -126,11 +124,4 @@ public class ArrayDeque<T> {
         return true;
     }
 
-    public static void main(String[] args) {
-        ArrayDeque<Integer> ad = new ArrayDeque<Integer>();
-        for (int i = 0; i < 32; i++) {
-            ad.addLast(i);
-        }
-        ad.printDeque();
-    }
 }

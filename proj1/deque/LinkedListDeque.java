@@ -121,10 +121,4 @@ public class LinkedListDeque<T> {
         return true;
     }
 
-    public static void main(String[] args) {
-        LinkedListDeque<String> lld1 = new LinkedListDeque<>();
-        LinkedListDeque<Integer> lld2 = new LinkedListDeque<>();
-        System.out.println(lld1.getClass() == lld2.getClass());
-    }
-
 }
