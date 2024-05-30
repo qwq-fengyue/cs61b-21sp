@@ -110,20 +110,19 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             return false;
         }
 
-        ArrayDeque<?> lld = (ArrayDeque<?>) o;
-        if (this.size != lld.size) {
+        Deque<?> deque = (Deque<?>) o;
+        if (this.size != deque.size()) {
             return false;
         }
 
         for (int i = 0; i < size; i++) {
-            if (!get(i).equals(lld.get(i))) {
+            if (!get(i).equals(deque.get(i))) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override
     public Iterator<T> iterator() {
         return new ArrayDequeIterator();
     }
