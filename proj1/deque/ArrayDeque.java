@@ -2,14 +2,14 @@ package deque;
 
 import java.util.Iterator;
 
-public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
+public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     private T[] items;
     private int size;
     private int nextFirst;
     private int nextLast;
 
     public ArrayDeque() {
-        items = (T []) new Object[8];
+        items = (T[]) new Object[8];
         size = 0;
         nextFirst = 7;
         nextLast = 0;
@@ -20,7 +20,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     }
 
     private void resize(int length) {
-        T[] newArray = (T []) new Object[length];
+        T[] newArray = (T[]) new Object[length];
         int oldIndex = nextLast;
         for (int i = 0; i < size; i++) {
             newArray[i] = items[oldIndex];
@@ -38,7 +38,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
     }
 
     private  void checkShrink() {
-        if (size < items.length / 4 && items.length > 8) {
+        if (size < items.length / 4 && size > 8) {
             resize(items.length / 2);
         }
     }
@@ -116,7 +116,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         }
 
         for (int i = 0; i < size; i++) {
-            if (get(i) != lld.get(i)) {
+            if (!get(i).equals(lld.get(i))) {
                 return false;
             }
         }
