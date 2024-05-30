@@ -21,7 +21,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
 
     private void resize(int length) {
         T[] newArray = (T[]) new Object[length];
-        int oldIndex = nextLast;
+        int oldIndex = getArrayIndex(nextFirst + 1);
         for (int i = 0; i < size; i++) {
             newArray[i] = items[oldIndex];
             oldIndex = getArrayIndex(oldIndex + 1);
@@ -38,7 +38,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
     }
 
     private  void checkShrink() {
-        if (size < items.length / 4 && size > 8) {
+        if (size < items.length / 4 && items.length > 8) {
             resize(items.length / 2);
         }
     }
@@ -106,7 +106,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T> {
             return true;
         }
 
-        if (!(o instanceof ArrayDeque)) {
+        if (!(o instanceof Deque)) {
             return false;
         }
 

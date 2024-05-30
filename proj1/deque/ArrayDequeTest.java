@@ -123,7 +123,7 @@ public class ArrayDequeTest {
      * Thou art more lovely and more temperate.
      * ...
      * */
-    public  void equalsTest() {
+    public void equalsTest() {
         ArrayDeque<String> ad1 = new ArrayDeque<String>();
         ad1.addLast("Shall");
         ad1.addLast("I");
